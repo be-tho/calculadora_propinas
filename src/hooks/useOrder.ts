@@ -24,6 +24,7 @@ export default function UseOrder() {
     }
 
     return {
-        addItem
+        addItem,
+        order
     }
  }
