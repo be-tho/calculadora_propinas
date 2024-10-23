@@ -2,12 +2,13 @@ import {menuItems} from "./data/db.ts";
 import MenuItem from "./components/MenuItem.tsx";
 import useOrder from "./hooks/useOrder";
 import OrderContents from "./components/OrderContents.tsx";
+import OrderTotals from "./components/OrderTotals.tsx";
 
 
 
 function App() {
 
-    const {order, addItem}= useOrder();
+    const {order, addItem, removeItem}= useOrder();
 
   return (
     <>
@@ -29,6 +30,10 @@ function App() {
             </div>
             <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
                 <OrderContents
+                    order={order}
+                    removeItem={removeItem}
+                />
+                <OrderTotals
                     order={order}
                 />
             </div>
